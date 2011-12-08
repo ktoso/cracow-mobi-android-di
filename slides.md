@@ -578,6 +578,56 @@ In the Module:
 
 ---
 
+toInstance()
+============
+
+You sometimes need to build the injected instance by hand...
+    
+    !java
+    bind(Twitter.class).toInstance(new FastTwitter());
+
+<span class="red">But that mixes logic into the module :-(</span>
+
+---
+
+Providers
+=========
+
+In the module: 
+
+    !java
+    bind(Twitter.class).annotatedWith(Slow.class)
+                       .toProvider(TwitterProvider.class);
+
+---
+
+Provider&lt;Twitter&gt;
+=========
+
+In the module: 
+
+    !java
+    bind(Twitter.class).annotatedWith(Slow.class)
+                       .toProvider(TwitterProvider.class);
+
+Implement the <b>Provider</b>:
+
+    !java
+    public class TwitterProvider implements Provider<Twitter> {
+
+      @Inject @Author
+      String username;
+
+      @Override
+      public Twitter get() {
+        return FastTwitter.forUser(username);
+      }
+    }
+
+<span class="green">Notice that it can have injected values too!</span>
+
+---
+
 @InjectView
 =============================
 
