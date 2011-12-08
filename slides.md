@@ -71,7 +71,7 @@ IoC && DI
 Inversion of Control
 ====================
 
-The hollwood principle
+The hollywood principle
 ----------------------
 
 ![Dont call us](img/dont_call_us.jpg)
