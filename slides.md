@@ -238,9 +238,23 @@ He's the one who does all the heavy lifting of creating instances.
 
 <div class="center bigger"><b><em>Injector</em></b> Man</div>
 
+---
+
+Injector
+========
+
+Here's what it does:
+
     !java
-    Injector injector = /*...*/.getInjector()
-    injector.injectMembers(someInstance);
+    class InjectStuffIntoMe {
+      @Inject
+      Stuff stuff;
+      
+      {
+        Injector injector = /*...*/.getInjector()
+        injector.injectMembers(someInstance);
+      }
+    }
 
 ---
 
