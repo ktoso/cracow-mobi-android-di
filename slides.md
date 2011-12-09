@@ -1,14 +1,6 @@
 Deep dive into RoboGuice
 =========
 
-<!-- iframe resize hack -->
-<script type="text/javascript" src="theme/js/squeezeFrame.js"></script>
-<script type="text/javascript">
-myContainer="presentation.html";
-myMax=0.25;
-myRedraw="both";
-</script>
-
 <div class="center bigger">
   beyond "Hello World apps"
 </div>
